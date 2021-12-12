@@ -20,21 +20,29 @@ CREATE TABLE Account (
     AccountNumber VARCHAR(40) NOT NULL,
     CreateDate DATE,
     UserId INT NOT NULL,
-    PRIMARY KEY (AccountId)
+    PRIMARY KEY (AccountId),
+    FOREIGN KEY (UserId) REFERENCES User(UserId)
 );
 
 CREATE TABLE Operation (
     OperationId INT UNSIGNED NOT NULL AUTO_INCREMENT,
     LastOperationAmount INT(15) NOT NULL,
-    Description TEXT,
-    AccountId INT NOT NULL,
-    PRIMARY KEY (OperationId)
+    OperationDescription TEXT,
+    UserId INT NOT NULL,
+    PRIMARY KEY (OperationId),
+    FOREIGN KEY (UserId) REFERENCES User(UserId)
+
 )
-ENGINE=INNODB;
+ENGINE=InnoDB;
 
 INSERT INTO User (UserFirstName, UserLastName, UserMail, Mdp, Adress, PostCard, Country, PhoneNumber)
 VALUES ('Eddy', 'DEPRETO', 'eddy.depreto@exemple.com', '?CeciEstUnMotDePasse?', '3 rue de la chanson', '45876', 'Kinder', '0786567643'),
 ('Jean', 'DEFLORETTE', 'jean.deflorette@exemple.com', '!JeSuisAussiUnMotDePass!!', '7 rue du cinéma', '36754', 'AUBAGNE', '0675438403');
 
 INSERT INTO Account (AccountName, AccountNumber, CreateDate, UserId)
-VALUES ('Compte Courant', 'CC-0000000453', '2021-12-09','');
+VALUES ('Compte Courant', 'CC-0000000453', '2021-12-09', 1),
+('Compte Courant','CC-0000000454', '2021-12-10', 2);
+
+INSERT INTO Operation (LastOperationAmount, OperationDescription, UserId)
+VALUES (54, 'Auchan', 1),
+(87, 'H&M', 1);
