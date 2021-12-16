@@ -1,66 +1,15 @@
+<?php
+include('Template/header.php');
 
+// Ci dessous le formulaire d'identification
+if (isset($_POST['prenom']) && isset($_POST['nom'])) { //isset détermine si une variable est déclaré et est différente de NULL
+    
+    $prenom = htmlspecialchars($_POST ['prenom']); //htmlspecialchars fait que tout ce qui sera tapé sera considéré comme caractère et non comme ligne de commande.
+    $nom = htmlspecialchars($_POST ['nom']);
+    
+    echo'Bonjour' .' '. $_POST['prenom'] .' '. $_POST['nom'] .' !';
+}
+/* ci-dessous je dis de m'affiché un formulaire avec la méthode post et l'" action" c'est vers quel page sera envoyé les infos.   */
+ include('Model/formulaireConnexion.php');
 
-  <?php
-  include('header.php');
-  ?>
-  <main>
-    <div class="container">
-      <section id="main" class="row">
-        <div class="card border-danger m-2" style="width: 18rem;">
-          <div id="cardHeader" class="card-header">
-            Featured
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <a type="button" class="btn btn-outline-dark m-2 btn-sm" href="compte courant.php">Accés au compte</a>
-
-          </ul>
-        </div>
-
-        <div class="card border-danger m-2" style="width: 18rem;">
-          <div id="cardHeader" class="card-header m-2">
-            Featured
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <a type="button" class="btn btn-outline-dark m-2 btn-sm" href="compte courant.php">Accés au compte</a>
-
-          </ul>
-        </div>
-
-        <div class="card border-danger m-2" style="width: 18rem;">
-          <div id="cardHeader" class="card-header">
-            Featured
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <a type="button" class="btn btn-outline-dark m-2 btn-sm" href="compte courant.php">Accés au compte</a>
-
-          </ul>
-        </div>
-
-        <div class="card border-danger m-2" style="width: 18rem;">
-          <div id="cardHeader" class="card-header">
-            Featured
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <a type="button" class="btn btn-outline-dark m-2 btn-sm" href="compte courant.php">Accés au compte</a>
-
-          </ul>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <?php
-  include("footer.php");
-  ?>
+    include('Template/footer.php');

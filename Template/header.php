@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" id="actu" href="#">Mes Actualités</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="actu" href="contact.php">Contact</a>
+                        </li>
 
                     </ul>
                 </div>

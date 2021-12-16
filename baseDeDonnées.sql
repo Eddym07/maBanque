@@ -1,6 +1,12 @@
 DROP DATABASE IF EXISTS MaBanque;
 CREATE DATABASE MaBanque CHARACTER SET 'utf8';
 USE MaBanque;
+
+DROP USER IF EXISTS 'MaBanque'@'localhost';
+CREATE USER 'MaBanque'@'localhost';
+GRANT ALL PRIVILEGES ON MaBanque.* To 'MaBanque'@'localhost' IDENTIFIED By 'banque76';
+
+
 CREATE TABLE MaBanque.User (
     UserId INT NOT NULL AUTO_INCREMENT,  
     UserFirstName VARCHAR(30) NOT NULL,
